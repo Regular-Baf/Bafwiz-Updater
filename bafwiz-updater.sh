@@ -1,8 +1,9 @@
 #!/bin/bash
 ## Please enter your Minecraft Version, Mod loader type, and its version below. Please use lowercase when possible.
-mc_ver=1.18.2
-loader=fabric
-loader_ver=0.13.2
+mc_ver=0.0.0 # Enter the number of your Minecraft version (e.g. 1.18.2).
+loader=modloader # Enter the name of your modloader (e.g. fabric).
+loader_ver=0.0.0 # Enter the number of your modloader version (e.g. 0.13.3).
+pack_path=/path/to/pack.toml # Please place the file path of the "pack.toml" file.
 ## Downloads packwiz the required bootstrap ting for Linux/Mac OS (untested). Please manually chmod (make executable) the "packwiz" file.
 if [[ $OSTYPE == 'linux'* ]]; then
 curl -O -C - https://raw.githubusercontent.com/Regular-Baf/Bafwiz-Updater/main/repo/linux/packwiz
@@ -10,7 +11,6 @@ wait
 elif [[ $OSTYPE == 'darwin'* ]]; then
 curl -O -C - https://raw.githubusercontent.com/Regular-Baf/Bafwiz-Updater/main/repo/macwiz/packwiz
 wait
-chmod +x ./packwiz
 else
 echo Sorry, we either could not recognise your operating system, or it is currently not supported.
 fi
@@ -32,13 +32,14 @@ rm mods-backup/*
 cp mods/* mods-backup
 wait
 ## This is where the magic happens.
-./packwiz init --name bafwiz-updater --author Baf/PolyMC --version updates --mc-version $mc_ver --modloader $loader --$loader2 $loader_ver -r
+./packwiz init --name bafwiz-updater --author Regular Baf --version updates --mc-version $mc_ver --modloader $loader --$loader2 $loader_ver -r
 wait
-./packwiz cf detect --mods-folder mods-metadata
+./packwiz cf detect
 wait
 echo 'y' | ./packwiz update -a
 wait
-mv pack.toml index.toml wa/
+"$INST_JAVA" -jar packwiz-installer-bootstrap.jar file:///$pack_path
+##java -jar packwiz-installer-bootstrap.jar file:///$pack_path
 wait
-## "$INST_JAVA" -jar packwiz-installer-bootstrap.jar file://wa/pack.toml
-java -jar packwiz-installer-bootstrap.jar file://wa/pack.toml
+## Hide the .toml metadata files.
+mv mods/*.toml mods/metadata
