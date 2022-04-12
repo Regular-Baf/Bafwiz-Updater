@@ -3,7 +3,7 @@ A simple script that took me far too long to write, that once set up, should be 
 ## Currently, here's what it does:
 * Downloads the required packwiz dependencies, automatically selecting the correct version for Linux and macOS.
 * Creates a backup of the `mods` folder, just in case something goes wrong.
-* Creates a new pack on each game launch that overwrites the previous one, this should allow mods to be added and removed within the launcher.
+* Creates a new pack on each game launch that overwrites the previous one, which should allow mods to be added and removed within the launcher.
 * Automatically detects and updates most installed mods.
 ## DISCLAIMER: Currently this doesn't work for whatever reason :<
 Dear smarter people, please help me fix this because I actually think it could be quite cool!
