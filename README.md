@@ -5,7 +5,7 @@ A simple script that took me far too long to write, that once set up, should be 
 * Creates a backup of the `mods` folder, just in case something goes wrong.
 * Creates a new pack on each game launch that overwrites the previous one, which should allow mods to be added and removed within the launcher.
 * Automatically detects and updates most installed mods.
-## DISCLAIMER: Currently this doesn't work for whatever reason :<
-Dear smarter people, please help me fix this because I actually think it could be quite cool!
-## Why doesn't it work?
-For whatever reason, packwiz doesn't seem to want to 'download' from a locally owned `pack.toml` file.
+* Hides mod metadata files.
+## DISCLAIMER: It works and it's kinda awesome :>
+Why not download it here and give it a try?
+*You may have to chmod it several times for some reason though.*
