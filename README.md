@@ -8,5 +8,16 @@ Currently it works on Linux using the PolyMC launcher, but it may work on macOS 
 * Creates a new pack on each game launch that overwrites the previous one, which should allow mods to be added and removed within the launcher.
 * Automatically detects and updates most installed mods.
 * Hides mod metadata files to keep the `mods` folder clean.
-## DISCLAIMER: It works and it's kinda awesome :>
-Why not [download it here](https://raw.githubusercontent.com/Regular-Baf/Bafwiz-Updater/main/bafwiz-updater.sh) and give it a try? *You may have to `chmod` it several times for some reason though.*
+## (PolyMC & Similar) How do I use it?
+After configuration, simply place the script within your insance's `.minecraft`, grant it the executable permission using `chmod` or a similar tool, and then within PolyMC, set the wrapper command as `./bafwiz-updater.sh`.
+```
+sudo chmod +x bafwiz-updater.sh
+```
+**NOTE:** It will fail the first time. This is because you must also use `chmod` on the downloaded `packwiz` file. After this is done, it should work as expected.
+```
+sudo chmod +x packwiz
+```
+**OTHER NOTE:** For some reason, after first successful use within PolyMC, you may have to use `chmod` to grant executable permissions again on the updater script.
+
+## DISCLAIMER: It works (mostly, please use at your own risk) and it's kinda awesome :>
+Why not [download it here](https://raw.githubusercontent.com/Regular-Baf/Bafwiz-Updater/main/bafwiz-updater.sh) and give it a try?
