@@ -32,14 +32,19 @@ rm mods-backup/*
 cp mods/* mods-backup
 wait
 ## This is where the magic happens.
-./packwiz init --name bafwiz-updater --author Regular Baf --version updates --mc-version $mc_ver --modloader $loader --$loader2 $loader_ver -r
+./packwiz init --name bafwiz-updater --author Regular_Baf --version updates --mc-version $mc_ver --modloader $loader --$loader2 $loader_ver -r
 wait
 ./packwiz cf detect
 wait
 echo 'y' | ./packwiz update -a
 wait
-"$INST_JAVA" -jar packwiz-installer-bootstrap.jar file:///$pack_path
-##java -jar packwiz-installer-bootstrap.jar file:///$pack_path
+## Restore mods in the mods folder to prevent redownloading of each one.
+cp mods-backup/* mods
+wait
+"$INST_JAVA" -jar packwiz-installer-bootstrap.jar file://$pack_path
+## java -jar packwiz-installer-bootstrap.jar file://$pack_path
 wait
 ## Hide the .toml metadata files.
+mkdir mods/metadata
+wait
 mv mods/*.toml mods/metadata
