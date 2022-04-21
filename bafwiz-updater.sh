@@ -19,6 +19,8 @@ wait
 ## Automatically determine some variable or another.
 if [ "$loader" == fabric ]; then
 loader2=fabric-version
+elif [ "$loader" == quilt ]; then
+loader2=quilt-version
 elif [ "$loader" == forge ]; then
 loader2=forge-version
 elif [ "$loader" == liteloader ]; then
