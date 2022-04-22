@@ -1,8 +1,9 @@
 # Bafwiz-Updater: Semi-Automatic Mod Updater
-A simple script that took me far too long to write, that once set up, should be be able to detect and then update Minecraft mods when placed in the `.minecraft` folder. Simply put, this just automates certain functions of packwiz to allow mod updating to just work without much user input, as opposed to the traditional packwiz approach.
+A simple script that took me far too long to write, that once set up, should be able to detect and then update Minecraft mods when placed in the `.minecraft` folder. Simply put, this just automates certain functions of packwiz to allow mod updating to just work without much user input, as opposed to the traditional packwiz approach.
 
 Currently it works on Linux using the PolyMC launcher, but it may work on macOS too. I'm not quite sure. As for the vanilla launcher, I also think it could be made to work but, again, I'm not quite sure.
-Also it should work with Quilt... I think.
+
+Also, it should work with Quilt... I think.
 ## Currently, here's what it does:
 * Downloads the required packwiz dependencies, automatically selecting the correct version for Linux and macOS.
 * Creates a backup of the `mods` folder, just in case something goes wrong.
@@ -10,6 +11,8 @@ Also it should work with Quilt... I think.
 * Automatically detects and updates most installed mods.
 * Hides mod metadata files to keep the `mods` folder clean.
 ## (PolyMC & Similar) How do I use it?
+To configure, simply open the script in your favourite text editor (KWrite for me) and follow the instructions on the first few lines.
+
 After configuration, simply place the script within your insance's `.minecraft`, grant it the executable permission using `chmod` or a similar tool, and then within PolyMC, set the wrapper command as `./bafwiz-updater.sh`.
 ```
 sudo chmod +x bafwiz-updater.sh
