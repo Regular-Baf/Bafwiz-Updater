@@ -8,9 +8,6 @@ pack_path=/path/to/pack.toml # Please place the file path of the "pack.toml" fil
 if [[ $OSTYPE == 'linux'* ]]; then
 curl -O -C - https://raw.githubusercontent.com/Regular-Baf/Bafwiz-Updater/main/repo/linux/packwiz
 wait
-elif [[ $OSTYPE == 'darwin'* ]]; then
-curl -O -C - https://raw.githubusercontent.com/Regular-Baf/Bafwiz-Updater/main/repo/macwiz/packwiz
-wait
 else
 echo Sorry, we either could not recognise your operating system, or it is currently not supported.
 fi
@@ -26,7 +23,7 @@ loader2=forge-version
 elif [ "$loader" == liteloader ]; then
 loader2=liteloader-version
 else
-echo Loader unknown. Please review the Bafwiz-updater script for errors.
+echo Loader unknown. Please review the Bafwiz-Updater script for errors.
 fi
 ## Just in case something dodgy happens, this script creates a backup of the mods folder!
 mkdir mods-backup
